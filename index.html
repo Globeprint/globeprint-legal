@@ -1,5 +1,159 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Globeprint · Globeprint</title><style>:root{--bg:#0B0F17;--card:#131A26;--text:#F4F6FA;--muted:#8C97A8;--accent:#2F7BF6}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,Segoe UI,Roboto,Inter,sans-serif}
-main{max-width:760px;margin:0 auto;padding:32px 18px 60px}h1{font-size:28px;margin:0 0 4px}h2{font-size:19px;margin:28px 0 6px}
-p,li{color:#DCE2EC}small,.muted{color:var(--muted)}a{color:#7AA7FF}.card{background:var(--card);border-radius:14px;padding:16px 18px;margin:16px 0}
-nav{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px;font-size:14px}</style></head><body><main><nav><a href="index.html">Globeprint</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a><a href="delete-account.html">Borrar cuenta</a><a href="privacy-en.html">English</a></nav><h1>🌍 Globeprint</h1><p>Tu diario de viaje con fotos, tu álbum de países y tu huella en el globo.</p><p><a href="privacy.html">Política de privacidad</a> · <a href="terms.html">Términos</a> · <a href="delete-account.html">Eliminar cuenta</a></p><p class="muted"><a href="privacy-en.html">Privacy</a> · <a href="terms-en.html">Terms</a> · <a href="delete-account-en.html">Delete account</a></p></main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Globeprint — Your footprint on the globe</title>
+<meta name="description" content="Globeprint is a travel app: mark the countries you’ve visited on a 3D globe, prove it with real photos, plan trips with hotels and tours, and travel safer with country guides and offline survival tools.">
+<meta property="og:title" content="Globeprint — Your footprint on the globe">
+<meta property="og:description" content="Mark your world, prove it with real photos and plan your next trip.">
+<meta property="og:image" content="https://globeprint.github.io/globeprint-legal/icon.png">
+<link rel="icon" href="favicon.png">
+<style>
+:root{--bg:#0B0F17;--card:#131A26;--line:#243042;--text:#F4F6FA;--muted:#8C97A8;--blue:#2F7BF6;--amber:#F28C38;--gold:#F2C14E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,"Segoe UI",Roboto,Inter,sans-serif}
+a{color:#7AA7FF}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{display:flex;align-items:center;gap:12px;padding:18px 0}
+header img{width:40px;height:40px;border-radius:10px}
+header b{font-size:19px;flex:1}
+.lang{display:flex;gap:6px}
+.lang button{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font:600 13px inherit;cursor:pointer}
+.lang button.on{color:var(--text);border-color:var(--blue);background:#2F7BF622}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:36px 0 30px}
+.hero h1{font-size:44px;line-height:1.1;margin:0 0 14px;letter-spacing:-.5px}
+.hero h1 span{color:var(--amber)}
+.hero p{font-size:18px;color:#DCE2EC;margin:0 0 22px}
+.hero .icon{width:100%;max-width:320px;justify-self:center;border-radius:22%;box-shadow:0 30px 80px #2F7BF640}
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 16px;font-weight:600;font-size:14px}
+.badge small{display:block;color:var(--muted);font-weight:500;font-size:11.5px}
+h2{font-size:28px;margin:46px 0 6px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card .e{font-size:28px}
+.card h3{margin:8px 0 4px;font-size:17px}
+.card p{margin:0;color:#C9D1DD;font-size:14.5px}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.partners span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:#DCE2EC}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.plan h3{margin:0 0 6px}
+.plan ul{margin:0;padding-left:18px;color:#C9D1DD;font-size:14.5px}
+.plan.plus{border-color:#F2C14E66}
+.plan.plus h3{color:var(--gold)}
+.support{margin-top:14px;border-color:#F2C14E66}
+.support p{margin:0;color:var(--gold);font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;color:var(--muted);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+[data-l]{display:none}
+html[lang=es] [data-l=es],html[lang=en] [data-l=en]{display:revert}
+.badge small[data-l]{display:none}
+html[lang=es] .badge small[data-l=es],html[lang=en] .badge small[data-l=en]{display:block}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.hero .icon{max-width:200px}.hero h1{font-size:34px}.grid{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img src="icon.png" alt="">
+  <b>Globeprint</b>
+  <div class="lang"><button id="b-es" onclick="setLang('es')">ES</button><button id="b-en" onclick="setLang('en')">EN</button></div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1 data-l="es">Tu huella en el <span>mundo</span>, país por país.</h1>
+    <h1 data-l="en">Your footprint on the <span>world</span>, country by country.</h1>
+    <p data-l="es">Globeprint es una app de viajes: marca en un globo 3D los países y lugares que conoces, compruébalo con tus fotos reales, arma tu álbum de viaje y planea el próximo destino con hoteles, tours y todo lo que necesitas saber del país.</p>
+    <p data-l="en">Globeprint is a travel app: mark the countries and places you’ve been on a 3D globe, prove it with your real photos, build your travel album and plan your next trip with hotels, tours and everything you need to know about each country.</p>
+    <div class="badges">
+      <div class="badge">App Store<small data-l="es">Próximamente</small><small data-l="en">Coming soon</small></div>
+      <div class="badge">▶ Google Play<small data-l="es">Próximamente</small><small data-l="en">Coming soon</small></div>
+      <div class="badge">🌐 12 <span data-l="es">idiomas</span><span data-l="en">languages</span><small>ES · EN · PT · FR · DE · RU · ID · ZH · JA · HI · BN · AR</small></div>
+    </div>
+  </div>
+  <img class="icon" src="icon.png" alt="Globeprint">
+</section>
+
+<h2 data-l="es">Lo que puedes hacer</h2><h2 data-l="en">What you can do</h2>
+<p class="sub" data-l="es">Todo pensado para viajeros de cualquier país.</p><p class="sub" data-l="en">Built for travelers from every country.</p>
+<div class="grid">
+  <div class="card"><div class="e">🌍</div>
+    <h3 data-l="es">Tu mundo en un globo 3D</h3><h3 data-l="en">Your world on a 3D globe</h3>
+    <p data-l="es">Los países se pintan a medida que los exploras, con más de 4.000 lugares imperdibles, Patrimonio de la Humanidad y atractivos.</p>
+    <p data-l="en">Countries light up as you explore them, with 4,000+ must-see places, UNESCO World Heritage sites and attractions.</p></div>
+  <div class="card"><div class="e">📸</div>
+    <h3 data-l="es">Fotos reales que lo prueban</h3><h3 data-l="en">Real photos as proof</h3>
+    <p data-l="es">Conquistas cada lugar con una foto tomada allí (por GPS), sin imágenes hechas con IA. Gana puntos y sube de nivel.</p>
+    <p data-l="en">Conquer each place with a photo taken there (GPS-verified), no AI images. Earn points and level up.</p></div>
+  <div class="card"><div class="e">📒</div>
+    <h3 data-l="es">Álbum y bitácora</h3><h3 data-l="en">Album and journal</h3>
+    <p data-l="es">Un álbum tipo colección por país y una bitácora de momentos, privados o para compartir con tus amigos.</p>
+    <p data-l="en">A collectible album for each country and a journal of moments, private or shared with friends.</p></div>
+  <div class="card"><div class="e">🗺️</div>
+    <h3 data-l="es">Simulador de viaje</h3><h3 data-l="en">Trip simulator</h3>
+    <p data-l="es">Arma tu itinerario y míralo como una película narrada, con costos estimados, transporte y dónde dormir cada noche. Envíaselo a tu pareja o a tus amigos para soñarlo juntos.</p>
+    <p data-l="en">Build your itinerary and watch it as a narrated film, with estimated costs, transport and where to sleep each night. Send it to your partner or friends to dream it together.</p></div>
+  <div class="card"><div class="e">🏨</div>
+    <h3 data-l="es">Hoteles, tours y servicios</h3><h3 data-l="en">Hotels, tours and services</h3>
+    <p data-l="es">Desde cada lugar y cada noche del itinerario llegas a reservar hoteles, tours, traslados, carros, seguro de viaje y eSIM.</p>
+    <p data-l="en">From every place and every night of your itinerary, book hotels, tours, transfers, car rentals, travel insurance and eSIMs.</p></div>
+  <div class="card"><div class="e">🧭</div>
+    <h3 data-l="es">Guía de cada país</h3><h3 data-l="en">Guide for every country</h3>
+    <p data-l="es">Moneda y cambio, idioma, hora, enchufes, visas, clima, números de emergencia y transporte local.</p>
+    <p data-l="en">Currency and exchange rates, language, time zone, plugs, visas, weather, emergency numbers and local transport.</p></div>
+  <div class="card"><div class="e">🗣️</div>
+    <h3 data-l="es">Habla con los locales</h3><h3 data-l="en">Talk to locals</h3>
+    <p data-l="es">Frases útiles en 26 idiomas con pronunciación, para pedir comida, direcciones o ayuda.</p>
+    <p data-l="en">Useful phrases in 26 languages with pronunciation, to order food, ask for directions or get help.</p></div>
+  <div class="card"><div class="e">🆘</div>
+    <h3 data-l="es">Supervivencia sin internet</h3><h3 data-l="en">Offline survival</h3>
+    <p data-l="es">Brújula, SOS, silbato, puntos guardados y guías básicas que funcionan sin señal.</p>
+    <p data-l="en">Compass, SOS, whistle, saved points and basic guides that work with no signal.</p></div>
+  <div class="card"><div class="e">🔒</div>
+    <h3 data-l="es">Privacidad primero</h3><h3 data-l="en">Privacy first</h3>
+    <p data-l="es">Privado por defecto, sin anuncios, sin vender datos. Las fotos públicas se publican sin su ubicación oculta.</p>
+    <p data-l="en">Private by default, no ads, no data selling. Public photos are shared without their hidden location data.</p></div>
+</div>
+
+<h2 data-l="es">Socios de viaje</h2><h2 data-l="en">Travel partners</h2>
+<p class="sub" data-l="es">Cuando un viajero decide reservar, Globeprint lo lleva a servicios reconocidos. Algunos de estos enlaces son de afiliado: Globeprint recibe una pequeña comisión, sin costo extra para el viajero. Así la app se mantiene sin anuncios.</p>
+<p class="sub" data-l="en">When a traveler decides to book, Globeprint sends them to trusted services. Some of these are affiliate links: Globeprint earns a small commission at no extra cost to the traveler. That’s how the app stays ad-free.</p>
+<div class="partners"><span>🏨 Booking.com</span><span>🎟 GetYourGuide</span><span>🎟 Viator</span><span>🚗 Discover Cars</span><span>🛡 SafetyWing</span><span>📶 Airalo</span></div>
+
+<h2 data-l="es">Gratis y Plus</h2><h2 data-l="en">Free and Plus</h2>
+<p class="sub" data-l="es">Sin anuncios. Lo esencial es gratis para siempre.</p><p class="sub" data-l="en">No ads. The essentials are free forever.</p>
+<div class="plans">
+  <div class="card plan"><h3 data-l="es">Gratis</h3><h3 data-l="en">Free</h3>
+    <ul data-l="es"><li>Globo, países, lugares y la ruta de conquista</li><li>Fotos y videos verificados, galería en el globo, puntos y niveles</li><li>Mi álbum, bitácoras, viajes en grupo y amigos</li><li>Simulaciones de viaje ilimitadas con reservas</li><li>Guía de cada país, frases, Manuscrito Zeynich y Supervivencia</li></ul>
+    <ul data-l="en"><li>Globe, countries, places and the conquest route</li><li>Verified photos and videos, gallery on the globe, points and levels</li><li>My album, journals, group trips and friends</li><li>Unlimited trip simulations with bookings</li><li>Country guides, phrases, Zeynich Manuscript and Survival</li></ul></div>
+  <div class="card plan plus"><h3>Globeprint Plus</h3>
+    <ul data-l="es"><li><b>Mi universo:</b> viaja en 3D de la Vía Láctea a la Tierra, con más de 90 objetos que se mueven según la ciencia real e información pública de la NASA</li><li>Viaje en nave a cualquier destino del universo, con 8 naves (reales, de estudios científicos e imaginarias)</li><li>Todos los fondos del espacio y animaciones del planeta</li><li>Comparar simulaciones de viaje lado a lado</li><li>Descubrimientos ilimitados e insignia de descubridor</li></ul>
+    <ul data-l="en"><li><b>My universe:</b> travel in 3D from the Milky Way down to Earth, with 90+ objects that move according to real science and public NASA information</li><li>Spaceship trips to any destination in the universe, with 8 ships (real, from scientific studies and imaginary)</li><li>All space backgrounds and planet animations</li><li>Compare trip simulations side by side</li><li>Unlimited discoveries and discoverer badge</li></ul></div>
+</div>
+<div class="card support">
+  <p data-l="es">💛 Queremos que todo esto siga gratis para siempre y que Globeprint nunca se llene de anuncios. Si la app te gusta, apóyanos con Plus: así lo hacemos posible.</p>
+  <p data-l="en">💛 We want all of this to stay free forever and keep Globeprint from ever filling up with ads. If you enjoy the app, support us with Plus: that's how we make it possible.</p>
+</div>
+
+<footer>
+  <nav>
+    <a href="privacy.html" data-l="es">Privacidad</a><a href="privacy-en.html" data-l="en">Privacy</a>
+    <a href="terms.html" data-l="es">Términos</a><a href="terms-en.html" data-l="en">Terms</a>
+    <a href="delete-account.html" data-l="es">Eliminar cuenta</a><a href="delete-account-en.html" data-l="en">Delete account</a>
+    <a href="mailto:globeprint.soporte@gmail.com" data-l="es">Contacto</a><a href="mailto:globeprint.soporte@gmail.com" data-l="en">Contact</a>
+  </nav>
+  <div data-l="es">Globeprint · Hecho en Bogotá, Colombia 🇨🇴 · Soporte: <a href="mailto:globeprint.soporte@gmail.com">globeprint.soporte@gmail.com</a></div>
+  <div data-l="en">Globeprint · Made in Bogotá, Colombia 🇨🇴 · Support: <a href="mailto:globeprint.soporte@gmail.com">globeprint.soporte@gmail.com</a></div>
+</footer>
+</div>
+<script>
+function setLang(l){document.documentElement.lang=l;document.getElementById('b-es').className=l==='es'?'on':'';document.getElementById('b-en').className=l==='en'?'on':'';try{localStorage.setItem('gp-lang',l)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('gp-lang')}catch(e){}
+setLang(saved||((navigator.language||'en').toLowerCase().indexOf('es')===0?'es':'en'));
+</script>
+</body>
+</html>
